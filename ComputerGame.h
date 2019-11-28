@@ -1,9 +1,10 @@
 //
-// Created by Jeronimo on 2019-11-26.
+// Created by lica-pc on 11/25/19.
 //
 
-#ifndef PRUEBA2_INTELIGENCIA_H
-#define PRUEBA2_COMPUTERGAME_H
+#ifndef PROYECTOBATTLESHIP_COMPUTERGAME_H
+#define PROYECTOBATTLESHIP_COMPUTERGAME_H
+
 
 #include "Ship.h"
 #include "Game.h"
@@ -11,6 +12,10 @@
 class ComputerGame{
 
 private:
+
+    vector<vector<casilla>> tableroPC; 
+
+    vector<vector<casilla>> tableroRef; 
 
     string **computerboard;
 
@@ -52,4 +57,4 @@ public:
 
 
 
-#endif //PRUEBA2_INTELIGENCIA_H
+#endif //PROYECTOBATTLESHIP_COMPUTERGAME_H
