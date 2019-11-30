@@ -4,7 +4,7 @@
 
 #include "ComputerGame.h"
 
-void ComputerGame::setsize(int tamano) {size = tamano;}
+void ComputerGame::setsize(int tamano = 10) {size = tamano;}
 
 void ComputerGame::createtable()
 {
@@ -21,7 +21,7 @@ void ComputerGame::createtable()
     }
 }
 
-void ComputerGame::printcomputer()
+/*void ComputerGame::printcomputer()
 {
 
     for (int i = 0; i < size; ++i) {
@@ -33,7 +33,7 @@ void ComputerGame::printcomputer()
 
         cout << endl;
     }
-}
+}*/
 
 
 void ComputerGame::printreference()

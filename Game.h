@@ -19,7 +19,7 @@ private:
 
     int size;
 
-    Ship playerbattleship = Ship(4, 0, "Battleship");
+    Ship playerbattleship = Ship(4, 0, "AircraftCarrier");
 
     Ship playercruiser = Ship(3, 0, "Cruiser");
 
@@ -37,7 +37,7 @@ private:
 
 public:
 
-    void start();
+
 
     void setsize();
 

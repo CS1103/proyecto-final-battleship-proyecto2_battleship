@@ -3,24 +3,12 @@
 //
 
 #include "Game.h"
-#include "Ship.cpp"
+#include "Ship.h"
 
-void Game::start()
-{
-
-    cout << "Bienvenido a Battleship" << endl;
-
-    cout << endl;
-
-    cout << "Por favor, introduzca las dimensiones del tablero." << endl;
-
-}
 
 void Game::setsize() {
-    int tamano;
-    do{
-        cin >> tamano;
-    } while(tamano < 5);
+    int tamano = 10;
+
     size = tamano;
 }
 

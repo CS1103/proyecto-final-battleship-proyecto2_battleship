@@ -1,7 +1,12 @@
-#include "Game.cpp"
-#include "ComputerGame.cpp"
+
+
+#include "Game.h"
+#include "ComputerGame.h"
+
 
 int main() {
+
+    int MaxTurnos = 18;
 
     int a = 0;
 
@@ -13,7 +18,7 @@ int main() {
 
     ComputerGame Juego1;
 
-    Juego.start();
+    //Juego.start();
 
     Juego.setsize();
 
@@ -23,7 +28,7 @@ int main() {
 
     Juego1.createtable();
 
-    cout << "Este es tu tablero, por favor, posiciona tus barcos." << endl;
+   // cout << "Este es tu tablero, por favor, posiciona tus barcos." << endl;
 
     Juego.printplayer();
 
@@ -31,15 +36,15 @@ int main() {
 
     Juego1.settable();
 
-    cout << "La computadora ha posicionado sus barcos." << endl;
+    //cout << "La computadora ha posicionado sus barcos." << endl;
 
-    cout << "Este es tu tablero de referencia. Suerte!" << endl;
+   // cout << "Este es tu tablero de referencia. Suerte!" << endl;
 
     do{a = Juego1.playerturn(a);
 
-        b = Juego.computerturn(b); }while(a < 18 && b < 18);
+        b = Juego.computerturn(b); }while(a < MaxTurnos && b < MaxTurnos);//arreglar
 
-    if (a == 18) cout << "Ganaste";
+    if (a == MaxTurnos) cout << "Ganaste";
 
     else cout << "Perdiste";
 

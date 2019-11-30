@@ -21,13 +21,15 @@ void Ship::setship(vector<vector<casilla>> &board, int area)
     char o;
 
     do{
-        cout << "Ingrese sus coordenada X para su " << name << endl;
-        cin >> x;
+       // cout << "Ingrese sus coordenada X para su " << name << endl;
+       cin >> x;
 
-        cout << "Ingrese su coordenada Y para su " << name << endl;
+
+
+      //  cout << "Ingrese su coordenada Y para su " << name << endl;
         cin >> y;
 
-        cout << "Ingrese su orientacion (H o V) para su " << name << endl;
+        //cout << "Ingrese su orientacion (H o V) para su " << name << endl;
         cin >> o;}
 
     while((o == 'H' && (x + size > area - 1 || y > area)) || ((o == 'V' && (y + size > area || x > area ))) || (o != 'H' && o != 'V'));
@@ -46,13 +48,13 @@ void Ship::setcomputership(vector<vector<casilla>> &board, int area)
 {
     int x; int y; char o;
 
-    do{
+   /* do{
         x = rand()%area; y = rand()%area;
 
         if (rand()%2 == 1) o = 'H'; else o = 'V';}
 
     while((o == 'H' && (x + size - 1 > area - 1 || y > area - 1)) || ((o == 'V' && (y + size - 1 > area - 1|| x > area - 1))) || (o != 'H' && o != 'V')); //Corregir 
-
+*/
     cx = x;
 
     cy = y;
