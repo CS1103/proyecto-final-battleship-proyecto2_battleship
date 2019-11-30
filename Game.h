@@ -19,7 +19,7 @@ private:
 
     int size;
 
-    Ship playerbattleship = Ship(4, 0, "AircraftCarrier");
+    Ship playeraircraftcarrier = Ship(4, 0, "AircraftCarrier");
 
     Ship playercruiser = Ship(3, 0, "Cruiser");
 
@@ -49,9 +49,9 @@ public:
 
     void settable();
 
-    int computerturn(int counter);
+    int computerturn(int counter, int myToken, std::string file);
 
-    int computerdoubleturn(int counter, int x, int y);
+    int computerdoubleturn(int counter, int x, int y, int myToken, std::string file);
 
 };
 

@@ -2,6 +2,7 @@
 
 #include "Game.h"
 #include "ComputerGame.h"
+#include "auxFunctions.h"
 
 
 int main() {
@@ -13,6 +14,8 @@ int main() {
     int b = 0;
 
     srand(time(NULL));
+
+    confHandshake("../BattleShip.out");
 
     Game Juego;
 

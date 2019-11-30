@@ -6,6 +6,7 @@
 #define PROYECTOBATTLESHIP_SHIP_H
 
 #include "casilla.h"
+#include "auxFunctions.h"
 
 using namespace std;
 
@@ -39,7 +40,7 @@ public:
 
     void setship(vector<vector<casilla>> &board, int area);
 
-    void setcomputership(vector<vector<casilla>> &board, int area);
+    void setcomputership(vector<vector<casilla>> &board, int area, std::string file, int myToken);
 
     void locate(vector<vector<casilla>> &board, int area);
 

@@ -1,7 +1,7 @@
 //
 // Created by lica-pc on 11/25/19.
 //
-
+#include "auxFunctions.h"
 #include "Ship.h"
 
 Ship::Ship(int tamano, int dano, string nombre) {size = tamano; damage = dano; name = nombre;}
@@ -22,13 +22,19 @@ void Ship::setship(vector<vector<casilla>> &board, int area)
 
     do{
        // cout << "Ingrese sus coordenada X para su " << name << endl;
+
+       //leer cordenada x casteada a entero
+
        cin >> x;
 
 
 
       //  cout << "Ingrese su coordenada Y para su " << name << endl;
+
+      //leer cordenada y
         cin >> y;
 
+        //leer orientacion
         //cout << "Ingrese su orientacion (H o V) para su " << name << endl;
         cin >> o;}
 
@@ -44,22 +50,32 @@ void Ship::setship(vector<vector<casilla>> &board, int area)
 }
 
 
-void Ship::setcomputership(vector<vector<casilla>> &board, int area)
+void Ship::setcomputership(vector<vector<casilla>> &board, int area, std::string file, int myToken)
 {
     int x; int y; char o;
 
-   /* do{
+
         x = rand()%area; y = rand()%area;
 
-        if (rand()%2 == 1) o = 'H'; else o = 'V';}
+        if (rand()%2 == 1) o = 'H'; else o = 'V';
 
     while((o == 'H' && (x + size - 1 > area - 1 || y > area - 1)) || ((o == 'V' && (y + size - 1 > area - 1|| x > area - 1))) || (o != 'H' && o != 'V')); //Corregir 
-*/
+
     cx = x;
 
     cy = y;
 
     orientation = o;
+
+    std::fstream out(file, std::ios::out);
+
+    char X = x - 65;
+
+
+
+    out << "TOKEN="<<myToken<<endl;
+    out <<X<<y<<endl;
+
 
     locatecomputer(board, area);
 }
