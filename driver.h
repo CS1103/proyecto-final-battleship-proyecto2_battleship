@@ -7,7 +7,7 @@
 
 #include "Game.h"
 #include "ComputerGame.h"
-#include "aux.h"
+#include "auxx.h"
 
 void driver() {
 
@@ -15,7 +15,6 @@ void driver() {
 
     int b = 0;
 
-    int maxPoints = 18;
 
     srand(time(NULL));
 
@@ -45,13 +44,22 @@ void driver() {
 
     cout << "Este es tu tablero de referencia. Suerte!" << endl;
 
+
+
+    int maxPoints = 18;
+
     do{a = Juego1.playerturn(a);
 
         b = Juego.computerturn(b, "../attack.out"); }while(a < maxPoints && b < maxPoints);
 
-    if (a == maxPoints) cout << "Ganaste";
+    if (a == maxPoints) {
+        cout << "Ganaste";
+
+    }
+
 
     else cout << "Perdiste";
+
 
     cout << "Fin del juego.";
 
