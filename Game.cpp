@@ -81,9 +81,9 @@ void Game::settable() {
 
     printplayer();
 
-    P1Torpedo3.setshipP1(tableroJugador, size);
+    //P1Torpedo3.setshipP1(tableroJugador, size);
 
-    printplayer();
+   // printplayer();
 }
 
 

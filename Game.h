@@ -37,7 +37,7 @@ private:
 
     Ship P1Torpedo2 = Ship(1, 0, "Torpedo Boat");
 
-    Ship P1Torpedo3 = Ship(1, 0, "Torpedo Boat");
+    //Ship P1Torpedo3 = Ship(1, 0, "Torpedo Boat");
 
 public:
 

@@ -39,7 +39,7 @@ void Ship::setshipP1(vector<vector<casilla>> &board, int area)
 
     orientation = o;
 
-    locate(board, area);
+    locate(board, area,"../placeFleet.out");
 }
 
 
@@ -75,7 +75,7 @@ void Ship::setshipP2(vector<vector<casilla>> &board, int area, std::string file)
 }
 
 
-void Ship::locate(vector<vector<casilla>> &board, int area)
+void Ship::locate(vector<vector<casilla>> &board, int area,std::string file)
 
 {
     if (check(board, area)) 
@@ -98,7 +98,13 @@ void Ship::locate(vector<vector<casilla>> &board, int area)
 
     else 
     {
-        cout << "Ya hay un barco en esta posición, por favor, vuelve a poner los numeros" << endl;
+        cout << "Ya hay un barco en esta posición "<< endl;
+        std::fstream out(file, std::ios::out);
+        out << "TOKEN=123456" << endl;
+        out << "PLACEFLEET"<< endl;
+        out << "STATUS=BUSY" << endl;
+
+
         setshipP1(board, area);
     }
 }

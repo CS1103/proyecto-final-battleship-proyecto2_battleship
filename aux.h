@@ -5,19 +5,22 @@
 #ifndef PROYECTO_FINAL_BATTLESHIP_PROYECTO2_BATTLESHIP_0D3F4EC49B5D95282743751F40E8C30B1C54A835_AUX_H
 #define PROYECTO_FINAL_BATTLESHIP_PROYECTO2_BATTLESHIP_0D3F4EC49B5D95282743751F40E8C30B1C54A835_AUX_H
 
-#include <fstream>
-#include <string>
-/*
-void handShake(std::string file) {
+#include <casilla.h>
 
-    std::string nombre = "HUASCAR";
+void handShake(std::string file){
 
-    std::fstream out(file, std::ios::out);
+        std::string nombre = "HUASCAR";
 
-    out << "HANDSHAKE=" << nombre << endl;
+        std::fstream out(file, std::ios::out);
 
-    //string P1name = leer
-}*/
+        out << "HANDSHAKE=" << nombre << endl;
+
+        //leer nombre = "nombre"
+
+
+}
+
+
 
 
 

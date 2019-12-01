@@ -7,6 +7,7 @@
 #include <ctime>
 #include <vector> 
 #include <iomanip>
+#include <fstream>
 using namespace std; 
 
 class casilla

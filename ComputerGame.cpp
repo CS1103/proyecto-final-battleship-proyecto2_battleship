@@ -66,9 +66,9 @@ void ComputerGame::settable()
 
     P2Torpedo.setshipP2(tableroPC, size, "../placeFleet.out");
 
-    P2Torpedo1.setshipP2(tableroPC, size, "../placeFleet.out");
+    P2Torpedo1.setshipP2(tableroPC, size, "../placeFleet1.out");
 
-    P2Torpedo2.setshipP2(tableroPC, size, "../placeFleet.out");
+    P2Torpedo2.setshipP2(tableroPC, size, "../placeFleet2.out");
 
     P2Torpedo3.setshipP2(tableroPC, size, "../placeFleet.out");
 
@@ -77,7 +77,7 @@ void ComputerGame::settable()
 
 int ComputerGame::playerturn(int counter)
 {
-    printreference();
+    printreference();//leer archivos
 
     int x, y;
 

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "ComputerGame.h"
+#include "aux.h"
 
 int main() {
 
@@ -15,7 +16,7 @@ int main() {
 
     ComputerGame Juego1;
 
-    //handShake("../handshake.out");
+    handShake("../handshake.out");
 
     Juego.setsize();
 
