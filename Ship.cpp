@@ -15,12 +15,18 @@ string Ship::getname() {return name;}
 void Ship::setshipP1(vector<vector<casilla>> &board, int area)
 
 //if token = mytoken
-{   int x;
 
-    int y;
+{
+    pair<pair<int,int>,char>vset_ship;
+    vset_ship=parse_place_fleet();
 
-    char o;
+    int x=vset_ship.first.first-1;
 
+    int y=vset_ship.first.second-1;
+
+    char o=vset_ship.second;
+    override_content_ship();
+    /*
     do{
         cout << "Ingrese sus coordenada X para su " << name << endl;
         cin >> x;
@@ -33,7 +39,7 @@ void Ship::setshipP1(vector<vector<casilla>> &board, int area)
     }
 
     while((o == 'H' && (x + size > area - 1 || y > area)) || ((o == 'V' && (y + size > area || x > area ))) || (o != 'H' && o != 'V'));
-
+*/
     cx = x;
 
     cy = y;
@@ -52,6 +58,8 @@ void Ship::setshipP2(vector<vector<casilla>> &board, int area, std::string file)
     char o;
 
     std::fstream out(file, std::ios::out);
+
+
 
     do{
         x = rand()%area; y = rand()%area;
@@ -100,7 +108,8 @@ void Ship::locate(vector<vector<casilla>> &board, int area,std::string file)
 
     else 
     {
-        cout << "Ya hay un barco en esta posición "<< endl;
+        //cout << "Ya hay un barco en esta posicion "<< endl;
+        cout<<endl;
         std::fstream out(file, std::ios::out);
         out << "TOKEN=123456" << endl;
         out << "PLACEFLEET"<< endl;

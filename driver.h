@@ -11,6 +11,11 @@
 
 void driver() {
 
+    string handshake_name="p2battleship";
+    while(parse_read_name()==handshake_name){
+        cout<<"STATUS=REJECTED"<<endl;
+
+    }
     int a = 0;
 
     int b = 0;

@@ -6,6 +6,7 @@
 #define PROYECTOBATTLESHIP_SHIP_H
 
 #include "casilla.h"
+#include "functions.h"
 
 
 using namespace std;

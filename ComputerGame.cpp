@@ -3,7 +3,7 @@
 //
 
 #include "ComputerGame.h"
-
+int aciertos=0;
 void ComputerGame::setsize(int tamano) {size = tamano;}
 
 void ComputerGame::createtable()
@@ -78,9 +78,19 @@ void ComputerGame::settable()
 int ComputerGame::playerturn(int counter)
 {
     //if token == myToken
+    pair<int,int>vattack;
+    vattack=parse_attack();
     printreference();
+    cout<<endl;
 
     int x, y;
+
+    x=vattack.first-1;
+    y=vattack.second-1;
+    cout<<x<<" "<<y<<endl;
+
+    override_content_attack();
+    /*
 
     cout << "Inserte la coordenada X de su ataque" << endl;
 
@@ -89,11 +99,11 @@ int ComputerGame::playerturn(int counter)
     cout << "Inserte la coordenada Y de su ataque" << endl;
 
     cin >> y;
-
+*/
     if (x >= size || y >= size)
 
     {
-        cout << "No puedes disparar ahí" << endl;
+        cout << "No puedes disparar ahi" << endl;
 
         playerturn(counter);
     }
@@ -104,7 +114,7 @@ int ComputerGame::playerturn(int counter)
         if (tableroRef[y][x].isAttacked()) 
         {
 
-            cout << "Ya has disparado aqui." << endl;
+            //cout << "Ya has disparado aqui." << endl;
 
             playerturn(counter);
 
@@ -125,7 +135,10 @@ int ComputerGame::playerturn(int counter)
                 playerturn(counter);
 
             }
-
+            else if(aciertos==10){
+                cout<<"P1 gano";
+                exit(0);
+            }
             else
             {
                 if (!tableroPC[y][x].isOccupied())

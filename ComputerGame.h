@@ -8,6 +8,7 @@
 
 #include "Ship.h"
 #include "Game.h"
+#include "functions.h"
 
 class ComputerGame{
 
