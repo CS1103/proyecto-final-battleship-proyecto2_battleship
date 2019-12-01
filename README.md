@@ -15,8 +15,8 @@ Reglas: Utilizamos las reglas clasicas de BattleShip; tenemos 4 tipos de naves d
 
 
 
-Importante: En los archivos en este github hay aux.h y funcionesaux.h, porfavor no considerar ninguno de estos archivos al clonar o descargar el respositorio. El archivo que debera ser tomado en consideracion es auxx.h. Disculpas la molestia.
-Adicionalemente, este juego esta diseñado con el proposito de simular una partida entre P1 y P2. Cambios son necesarios para implementar el codigo de battleShip a un servido Multiplayer, sin embargo la lectura y la escritura de archivos ya han sido desarrollado para cumplir esa funcion.
+IMPORTANTE: En los archivos en este github hay aux.h y funcionesaux.h, porfavor no considerar ninguno de estos archivos al clonar o descargar el respositorio. El archivo que debera ser tomado en consideracion es auxx.h. Disculpas la molestia.
+Adicionalemente, este juego esta diseñado con el proposito de simular una partida entre P1 y P2. Cambios son necesarios para implementar el codigo de battleShip a un servido Multiplayer, sin embargo la lectura y la escritura de archivos ya han sido desarrollado para cumplir esa funcion. (SOLO DESCARGAR EL ARCHIVO auxx.h)
 
 
 Cualquier duda pueden comunicarse a: jeronimo.harmsen@utec.edu.pe
