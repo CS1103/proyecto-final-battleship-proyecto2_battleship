@@ -1,7 +1,7 @@
 //
 // Created by lica-pc on 11/25/19.
 //
-#include "auxFunctions.h"
+
 #include "Ship.h"
 
 Ship::Ship(int tamano, int dano, string nombre) {size = tamano; damage = dano; name = nombre;}
@@ -12,7 +12,7 @@ int Ship::getsize() {return size;}
 
 string Ship::getname() {return name;}
 
-void Ship::setship(vector<vector<casilla>> &board, int area)
+void Ship::setshipP1(vector<vector<casilla>> &board, int area)
 
 {   int x;
 
@@ -21,22 +21,15 @@ void Ship::setship(vector<vector<casilla>> &board, int area)
     char o;
 
     do{
-       // cout << "Ingrese sus coordenada X para su " << name << endl;
+        cout << "Ingrese sus coordenada X para su " << name << endl;
+        cin >> x;
 
-       //leer cordenada x casteada a entero
-
-       cin >> x;
-
-
-
-      //  cout << "Ingrese su coordenada Y para su " << name << endl;
-
-      //leer cordenada y
+        cout << "Ingrese su coordenada Y para su " << name << endl;
         cin >> y;
 
-        //leer orientacion
-        //cout << "Ingrese su orientacion (H o V) para su " << name << endl;
-        cin >> o;}
+        cout << "Ingrese su orientacion (H o V) para su " << name << endl;
+        cin >> o;
+    }
 
     while((o == 'H' && (x + size > area - 1 || y > area)) || ((o == 'V' && (y + size > area || x > area ))) || (o != 'H' && o != 'V'));
 
@@ -50,14 +43,18 @@ void Ship::setship(vector<vector<casilla>> &board, int area)
 }
 
 
-void Ship::setcomputership(vector<vector<casilla>> &board, int area, std::string file, int myToken)
+void Ship::setshipP2(vector<vector<casilla>> &board, int area, std::string file)
 {
-    int x; int y; char o;
+    int x;
+    int y;
+    char o;
 
+    std::fstream out(file, std::ios::out);
 
+    do{
         x = rand()%area; y = rand()%area;
 
-        if (rand()%2 == 1) o = 'H'; else o = 'V';
+        if (rand()%2 == 1) o = 'H'; else o = 'V';}
 
     while((o == 'H' && (x + size - 1 > area - 1 || y > area - 1)) || ((o == 'V' && (y + size - 1 > area - 1|| x > area - 1))) || (o != 'H' && o != 'V')); //Corregir 
 
@@ -67,15 +64,12 @@ void Ship::setcomputership(vector<vector<casilla>> &board, int area, std::string
 
     orientation = o;
 
-    std::fstream out(file, std::ios::out);
-
-    char X = x - 65;
+    char X = x + 65;
 
 
-
-    out << "TOKEN="<<myToken<<endl;
-    out <<X<<y<<endl;
-
+    out << "TOKEN=123456" << endl;
+    out << "PLACEFLEET="<<X<<y<< endl;
+    out << "STATUS=ACCEPTED" << endl;
 
     locatecomputer(board, area);
 }
@@ -105,7 +99,7 @@ void Ship::locate(vector<vector<casilla>> &board, int area)
     else 
     {
         cout << "Ya hay un barco en esta posición, por favor, vuelve a poner los numeros" << endl;
-        setship(board, area);
+        setshipP1(board, area);
     }
 }
 
@@ -128,7 +122,7 @@ void Ship::locatecomputer(vector<vector<casilla>> &board, int area)
 
     else 
     {
-        setship(board, area);
+        setshipP1(board, area);
     }
 }
 

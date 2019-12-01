@@ -1,13 +1,7 @@
-
-
 #include "Game.h"
 #include "ComputerGame.h"
-#include "auxFunctions.h"
-
 
 int main() {
-
-    int MaxTurnos = 18;
 
     int a = 0;
 
@@ -15,13 +9,11 @@ int main() {
 
     srand(time(NULL));
 
-    confHandshake("../BattleShip.out");
-
     Game Juego;
 
     ComputerGame Juego1;
 
-    //Juego.start();
+
 
     Juego.setsize();
 
@@ -31,7 +23,7 @@ int main() {
 
     Juego1.createtable();
 
-   // cout << "Este es tu tablero, por favor, posiciona tus barcos." << endl;
+    cout << "Este es tu tablero, por favor, posiciona tus barcos." << endl;
 
     Juego.printplayer();
 
@@ -39,15 +31,15 @@ int main() {
 
     Juego1.settable();
 
-    //cout << "La computadora ha posicionado sus barcos." << endl;
+    cout << "La computadora ha posicionado sus barcos." << endl;
 
-   // cout << "Este es tu tablero de referencia. Suerte!" << endl;
+    cout << "Este es tu tablero de referencia. Suerte!" << endl;
 
     do{a = Juego1.playerturn(a);
 
-        b = Juego.computerturn(b); }while(a < MaxTurnos && b < MaxTurnos);//arreglar
+        b = Juego.computerturn(b, "../attack.out"); }while(a < 18 && b < 18);
 
-    if (a == MaxTurnos) cout << "Ganaste";
+    if (a == 18) cout << "Ganaste";
 
     else cout << "Perdiste";
 

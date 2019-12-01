@@ -4,7 +4,7 @@
 
 #include "ComputerGame.h"
 
-void ComputerGame::setsize(int tamano = 10) {size = tamano;}
+void ComputerGame::setsize(int tamano) {size = tamano;}
 
 void ComputerGame::createtable()
 {
@@ -21,7 +21,7 @@ void ComputerGame::createtable()
     }
 }
 
-/*void ComputerGame::printcomputer()
+void ComputerGame::printcomputer()
 {
 
     for (int i = 0; i < size; ++i) {
@@ -33,7 +33,7 @@ void ComputerGame::createtable()
 
         cout << endl;
     }
-}*/
+}
 
 
 void ComputerGame::printreference()
@@ -52,21 +52,25 @@ void ComputerGame::printreference()
 
 void ComputerGame::settable()
 {
-    computerbattleship.setcomputership(tableroPC, size);
+    P2aircraftCarrier.setshipP2(tableroPC, size, "../placeFleet.out");
 
-    computercruiser.setcomputership(tableroPC, size);
+    P2battleCruiser.setshipP2(tableroPC, size, "../placeFleet.out");
 
-    computercruiser1.setcomputership(tableroPC, size);
+    P2battleCruiser1.setshipP2(tableroPC, size, "../placeFleet.out");
 
-    computerdestroyer.setcomputership(tableroPC, size);
+    P2Submarine.setshipP2(tableroPC, size,"../placeFleet.out");
 
-    computerdestroyer1.setcomputership(tableroPC, size);
+    P2Submarine1.setshipP2(tableroPC, size, "../placeFleet.out");
 
-    computerdestroyer2.setcomputership(tableroPC, size);
+    P2Submarine2.setshipP2(tableroPC, size, "../placeFleet.out");
 
-    computersubmarine.setcomputership(tableroPC, size);
+    P2Torpedo.setshipP2(tableroPC, size, "../placeFleet.out");
 
-    computersubmarine1.setcomputership(tableroPC, size);
+    P2Torpedo1.setshipP2(tableroPC, size, "../placeFleet.out");
+
+    P2Torpedo2.setshipP2(tableroPC, size, "../placeFleet.out");
+
+    P2Torpedo3.setshipP2(tableroPC, size, "../placeFleet.out");
 
 
 }

@@ -19,21 +19,25 @@ private:
 
     int size;
 
-    Ship playeraircraftcarrier = Ship(4, 0, "AircraftCarrier");
+    Ship P1AircraftCarrier = Ship(4, 0, "Aircraft Carrier");
 
-    Ship playercruiser = Ship(3, 0, "Cruiser");
+    Ship P1BattleCruiser = Ship(3, 0, "Cruiser");
 
-    Ship playercruiser1 = Ship(3, 0, "Cruiser");
+    Ship P1BattleCruiser1 = Ship(3, 0, "Cruiser");
 
-    Ship playerdestroyer = Ship(2, 0, "Destroyer");
+    Ship P1Submarine = Ship(2, 0, "Submarine");
 
-    Ship playerdestroyer1 = Ship(2, 0, "Destroyer");
+    Ship P1Submarine1 = Ship(2, 0, "Submarine");
 
-    Ship playerdestroyer2 = Ship(2, 0, "Destroyer");
+    Ship P1Submarine2 = Ship(2, 0, "Submarine");
 
-    Ship playersubmarine = Ship(1, 0, "Submarine");
+    Ship P1Torpedo = Ship(1, 0, "Torpedo Boat");
 
-    Ship playersubmarine1 = Ship(1, 0, "Submarine");
+    Ship P1Torpedo1 = Ship(1, 0, "Torpedo Boat");
+
+    Ship P1Torpedo2 = Ship(1, 0, "Torpedo Boat");
+
+    Ship P1Torpedo3 = Ship(1, 0, "Torpedo Boat");
 
 public:
 
@@ -49,9 +53,9 @@ public:
 
     void settable();
 
-    int computerturn(int counter, int myToken, std::string file);
+    int computerturn(int counter, std::string file);
 
-    int computerdoubleturn(int counter, int x, int y, int myToken, std::string file);
+    int computerdoubleturn(int counter, int x, int y, std::string file);
 
 };
 

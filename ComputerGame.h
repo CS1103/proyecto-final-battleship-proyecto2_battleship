@@ -23,21 +23,25 @@ private:
 
     int size;
 
-    Ship computerbattleship = Ship(4, 0, "Battleship");
+    Ship P2aircraftCarrier = Ship(4, 0, "Battleship");
 
-    Ship computercruiser = Ship(3, 0, "Cruiser");
+    Ship P2battleCruiser = Ship(3, 0, "Cruiser");
 
-    Ship computercruiser1 = Ship(3, 0, "Cruiser");
+    Ship P2battleCruiser1 = Ship(3, 0, "Cruiser");
 
-    Ship computerdestroyer = Ship(2, 0, "Destroyer");
+    Ship P2Submarine = Ship(2, 0, "Submarine");
 
-    Ship computerdestroyer1 = Ship(2, 0, "Destroyer");
+    Ship P2Submarine1 = Ship(2, 0, "Submarine");
 
-    Ship computerdestroyer2 = Ship(2, 0, "Destroyer");
+    Ship P2Submarine2 = Ship(2, 0, "Submarine");
 
-    Ship computersubmarine = Ship(1, 0, "Submarine");
+    Ship P2Torpedo = Ship(1, 0, "Torpedo");
 
-    Ship computersubmarine1 = Ship(1, 0, "Submarine");
+    Ship P2Torpedo1 = Ship(1, 0, "Torpedo");
+
+    Ship P2Torpedo2 = Ship(1, 0, "Torpedo");
+
+    Ship P2Torpedo3 = Ship(1, 0, "Torpedo");
 
 public:
 

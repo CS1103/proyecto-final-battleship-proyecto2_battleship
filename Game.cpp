@@ -46,54 +46,75 @@ void Game::printplayer()
 
 void Game::settable() {
 
-    playeraircraftcarrier.setship(tableroJugador, size);
+    P1AircraftCarrier.setshipP1(tableroJugador, size);
     printplayer();
 
-    playercruiser.setship(tableroJugador, size);
-
-    printplayer();
-
-    playercruiser1.setship(tableroJugador, size);
+    P1BattleCruiser.setshipP1(tableroJugador, size);
 
     printplayer();
 
-    playerdestroyer.setship(tableroJugador, size);
+    P1BattleCruiser1.setshipP1(tableroJugador, size);
 
     printplayer();
 
-    playerdestroyer1.setship(tableroJugador, size);
+    P1Submarine.setshipP1(tableroJugador, size);
 
     printplayer();
 
-    playerdestroyer2.setship(tableroJugador, size);
+    P1Submarine1.setshipP1(tableroJugador, size);
 
     printplayer();
 
-    playersubmarine.setship(tableroJugador, size);
+    P1Submarine2.setshipP1(tableroJugador, size);
 
     printplayer();
 
-    playersubmarine1.setship(tableroJugador, size);
+    P1Torpedo.setshipP1(tableroJugador, size);
+
+    printplayer();
+
+    P1Torpedo1.setshipP1(tableroJugador, size);
+
+    printplayer();
+
+    P1Torpedo2.setshipP1(tableroJugador, size);
+
+    printplayer();
+
+    P1Torpedo3.setshipP1(tableroJugador, size);
 
     printplayer();
 }
 
 
-int Game::computerturn(int counter, int myToken, std::string file) //attack
+int Game::computerturn(int counter,std::string file)
 {
+    int myToken = 123;
+
+    std::fstream out(file, std::ios::out);
+
+
 
     int x = rand()%size;
 
     int y = rand()%size;
 
-    if(tableroJugador[y][x].isAttacked()) computerturn(counter);
+    char X = x + 65;
+
+    out << "TOKEN="<<myToken<< endl;
+    out << "ATTACK=" <<X<<y<<endl;
+
+
+    if(tableroJugador[y][x].isAttacked()) computerturn(counter, "../attack.out");
 
     else
     {
 
         if (tableroJugador[y][x].isOccupied()){
 
-            cout << "player1 La computadora ha acertado" << endl;
+            cout << "P2 ha acertado" << endl;
+
+            out << "MESSAGE=DAMAGED"<<endl;
 
             tableroJugador[y][x].attackHit();
 
@@ -101,14 +122,8 @@ int Game::computerturn(int counter, int myToken, std::string file) //attack
 
             counter++;
 
-            computerdoubleturn(counter, x, y);
 
-            std::fstream out(file, std::ios::out);
-
-            out << "TOKEN="<<myToken<<endl;
-            out << "ATTACK"<<endl;
-            out << "STATUS=ACCEPTED"<<endl;
-            out << "MESSAGE=DAMAGED"<<endl;
+            computerdoubleturn(counter, x, y, "../attack.out");
         }
 
         else
@@ -117,16 +132,11 @@ int Game::computerturn(int counter, int myToken, std::string file) //attack
             if (!tableroJugador[y][x].isOccupied())
             {
 
-                cout << "player1 La computadora fallo, es tu del player2" << endl;
+                cout << "P2 fallo, es turno de P1" << endl;
+
+                out << "MESSAGE=FAILED"<<endl;
 
                 tableroJugador[y][x].attackMiss();
-
-                std::fstream out(file, std::ios::out);
-
-                out << "TOKEN="<<myToken<<endl;
-                out << "ATTACK"<<endl;
-                out << "STATUS=ACCEPTED"<<endl;
-                out << "MESSAGE=FAILED"<<endl;
             }
         }
     }
@@ -135,11 +145,21 @@ int Game::computerturn(int counter, int myToken, std::string file) //attack
 
 }
 
-int Game::computerdoubleturn(int counter, int x, int y, int myToken, std::string file)
+int Game::computerdoubleturn(int counter, int x, int y, std::string file)
 {
     int cx = x;
 
+    char X = x + 65;
+
+    int myToken = 123;
+
     int cy = y;
+
+    std::fstream out(file, std::ios::out);
+
+    out << "TOKEN="<<myToken<< endl;
+    out << "ATTACK=" <<X<<y<<endl;
+
 
     int variable = rand()%4;
 
@@ -158,9 +178,9 @@ int Game::computerdoubleturn(int counter, int x, int y, int myToken, std::string
         }
     }
 
-    if (cx >= size || cx < 0 || cy >= size || cy < 0) computerdoubleturn(counter, x, y);
+    if (cx >= size || cx < 0 || cy >= size || cy < 0) computerdoubleturn(counter, x, y, "../attack.out");
 
-    if(tableroJugador[cy][cx].isAttacked()) computerturn(counter);
+    if(tableroJugador[cy][cx].isAttacked()) computerturn(counter, "../attack.out");
 
     else
 
@@ -168,7 +188,9 @@ int Game::computerdoubleturn(int counter, int x, int y, int myToken, std::string
 
         if (tableroJugador[cy][cx].isOccupied()){
 
-            cout << "p1 La computadora ha acertado" << endl;
+            cout << "P2 ha acertado" << endl;
+
+            out << "MESSAGE=DAMAGED"<<endl;
 
             tableroJugador[cy][cx].attackHit();
 
@@ -176,14 +198,7 @@ int Game::computerdoubleturn(int counter, int x, int y, int myToken, std::string
 
             counter++;
 
-            computerdoubleturn(counter, cx, cy);
-
-            std::fstream out(file, std::ios::out);
-
-            out << "TOKEN="<<myToken<<endl;
-            out << "ATTACK"<<endl;
-            out << "STATUS=ACCEPTED"<<endl;
-            out << "MESSAGE=DAMAGED"<<endl;
+            computerdoubleturn(counter, cx, cy, "../attack.out");
 
         }
 
@@ -193,16 +208,10 @@ int Game::computerdoubleturn(int counter, int x, int y, int myToken, std::string
             if (!tableroJugador[cy][cx].isOccupied())
 
             {
-                cout << "p1La computadora fallo, es turno de p2" << endl;
+
+                out << "MESSAGE=FAILED"<<endl;
 
                 tableroJugador[cy][cx].attackMiss();
-
-                std::fstream out(file, std::ios::out);
-
-                out << "TOKEN="<<myToken<<endl;
-                out << "ATTACK"<<endl;
-                out << "STATUS=ACCEPTED"<<endl;
-                out << "MESSAGE=FAILED"<<endl;
             }
         }
 
