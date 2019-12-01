@@ -14,6 +14,7 @@ string Ship::getname() {return name;}
 
 void Ship::setshipP1(vector<vector<casilla>> &board, int area)
 
+//if token = mytoken
 {   int x;
 
     int y;
@@ -45,6 +46,7 @@ void Ship::setshipP1(vector<vector<casilla>> &board, int area)
 
 void Ship::setshipP2(vector<vector<casilla>> &board, int area, std::string file)
 {
+    //if token == mytoken
     int x;
     int y;
     char o;

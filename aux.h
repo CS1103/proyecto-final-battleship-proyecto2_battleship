@@ -15,7 +15,7 @@ void handShake(std::string file){
 
         out << "HANDSHAKE=" << nombre << endl;
 
-        //leer nombre = "nombre"
+
 
 
 }

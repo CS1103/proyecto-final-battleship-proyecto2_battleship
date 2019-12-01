@@ -89,8 +89,10 @@ void Game::settable() {
 
 int Game::computerturn(int counter,std::string file)
 {
-    int myToken = 123;
 
+    int myToken = 123456;
+
+    //if my token == mytoken
     std::fstream out(file, std::ios::out);
 
 
@@ -140,6 +142,8 @@ int Game::computerturn(int counter,std::string file)
             }
         }
     }
+
+    //else cout<<TOKEN ERROR
 
     return counter;
 

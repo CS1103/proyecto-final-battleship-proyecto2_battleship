@@ -14,7 +14,7 @@ class casilla
 {
     private:
         bool ocuppied; 
-        char showChar; 
+        char showChar;
         bool attempted; 
     public:
         casilla()

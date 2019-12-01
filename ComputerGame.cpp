@@ -77,7 +77,8 @@ void ComputerGame::settable()
 
 int ComputerGame::playerturn(int counter)
 {
-    printreference();//leer archivos
+    //if token == myToken
+    printreference();
 
     int x, y;
 
