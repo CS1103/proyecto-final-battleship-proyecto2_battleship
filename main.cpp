@@ -7,13 +7,15 @@ int main() {
 
     int b = 0;
 
+    int maxPoints = 18;
+
     srand(time(NULL));
 
     Game Juego;
 
     ComputerGame Juego1;
 
-
+    //handShake("../handshake.out");
 
     Juego.setsize();
 
@@ -37,9 +39,9 @@ int main() {
 
     do{a = Juego1.playerturn(a);
 
-        b = Juego.computerturn(b, "../attack.out"); }while(a < 18 && b < 18);
+        b = Juego.computerturn(b, "../attack.out"); }while(a < maxPoints && b < maxPoints);
 
-    if (a == 18) cout << "Ganaste";
+    if (a == maxPoints) cout << "Ganaste";
 
     else cout << "Perdiste";
 
